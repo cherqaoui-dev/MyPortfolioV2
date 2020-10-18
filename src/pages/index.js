@@ -1,12 +1,33 @@
 import React from "react"
 import { graphql } from "gatsby"
-import {Layout} from '../components'
+import styled, { createGlobalStyle} from "styled-components"
+import {Main, Header, Footer} from '../components'
+
+const GlobalStyle = createGlobalStyle`
+html, body {
+  width: 100%;
+  height: 100%;
+}
+`
+const LayoutStyle = styled.div`
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 100%;
+`
 
 export default function Home({data}) {
   return (
-  <Layout>
-    Hello world
-  </Layout>
+    <React.Fragment>
+      <GlobalStyle />
+      <LayoutStyle>
+        <Header />
+        <Main>
+        Hello World
+        </Main>
+        <Footer />
+      </LayoutStyle>
+    </React.Fragment>
   )
 }
 

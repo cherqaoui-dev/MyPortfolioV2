@@ -1,5 +1,9 @@
-import Layout from './layout'
+import Main from './main'
+import Header from './header'
+import Footer from './footer'
 
 export {
-  Layout,
+  Main,
+  Header,
+  Footer,
 }
