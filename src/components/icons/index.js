@@ -6,7 +6,7 @@ import IconInstagram from "./instagram"
 import IconGithub from "./github"
 import IconCodepen  from "./codepen"
 import IconExternal from "./external"
-import IconLogo from "./logo"
+import IconBrand from "./brand"
 
 export {
   IconFolder,
@@ -17,5 +17,5 @@ export {
   IconGithub,
   IconCodepen,
   IconExternal,
-  IconLogo
+  IconBrand
 }

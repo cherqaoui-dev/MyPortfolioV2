@@ -1,0 +1,51 @@
+@font-face {
+  font-family: "Calibre";
+  src: url("../../static/fonts/Calibre/Calibre-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "SFMono";
+  src: url("../../static/fonts/SFMono/SFMono-Regular.woff") format("woff");
+}
+
+:root {
+  --font-sans: 'Calibre';
+  --fz-xl: 20px;
+  --navy: #0a192f;
+  --slate: #8892b0;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  color: var(--slate);
+  background-color: var(--navy);
+  font-family: var(--font-sans);
+  font-size: var(--fz-xl);
+  line-height: 1.3;
+  overflow-x: initial;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a, a:hover {
+  text-decoration: none;
+}
