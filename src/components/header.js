@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
+import SideNav from "./sidenav"
 import { IconBrand } from "./icons"
 import { navLinks } from "../config"
 import { StyledLink, StyledButton } from "../styles/partials"
@@ -11,7 +12,7 @@ const Container = styled.header`
   padding: 0 50px;
   position: fixed;
   top: 0;
-  z-index: 2;
+  z-index: 3;
   transform: ${props => props.hideNav ? `translateY(-100px)` : `translateY(0)`};
   width: 100%;
   height: ${props => props.isNearTop ? `100px` : `80px`};
@@ -20,9 +21,12 @@ const Container = styled.header`
   justify-content: space-between;
   align-items: center;
 
-  background: ${props => props.isNearTop ? `${colors.navy}` : `${colors.lightNavy}`};
+  background: ${props => props.isNearTop ? `${colors.navy}` : `${colors.transparentNavy}`};
   box-shadow: ${props => props.isTop ? `none` : `0 10px 30px -10px ${colors.navyShadow}`};
   transition: all 0.2s cubic-bezier(.55,.06,.68,.19);
+
+  ${media.phoneL`padding: 0 30px;`}
+  ${media.phone`padding: 0 20px;`}
 `
 const Brand = styled(Link)`
   width: 50px;
@@ -59,11 +63,13 @@ const NavLink = styled(StyledLink)`
 
 const BurgerButton = styled.div`
   position: relative;
+  z-index: 3;
   display: none;
   width: 36px;
   height: 36px;
   color: ${colors.green};
   cursor: pointer;
+
   ${media.phoneL`
     display: unset;
   `}
@@ -97,7 +103,12 @@ const BurgerButtonBars = styled.div`
 
 `
 
-export default () => {
+const StyledSmallButton = styled(StyledButton)`
+  padding: 10px;
+  font-size: ${fontSizes.xs};
+`
+
+export default ({setMenuState}) => {
 
   const NAV_NEAR_TOP_THRESHOLD = 60
   let previousY = 0
@@ -108,39 +119,45 @@ export default () => {
   const [hideNav, setHideNav] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
 
-  const handleClick = () => {
+  useEffect(() => console.log(hideNav), [hideNav])
+
+  const handleBurgerClick = () => {
+    if(!menuOpen)
+      document.body.style.position = 'fixed'
+    else
+      document.body.style.position = 'static'
+
     setMenuOpen(!menuOpen)
   }
 
   const handleScroll = () => {
     const currentY = window.scrollY
 
+    // Determine if we are on top or not
     if(currentY === 0)
       setIsTop(true)
     else
       setIsTop(false)
 
     // handle near top position
-    if(currentY < NAV_NEAR_TOP_THRESHOLD)
+    if(currentY < NAV_NEAR_TOP_THRESHOLD){
       setIsNearTop(true)
-    else
-      setIsNearTop(false)
-
-    // hide nav after bypassing threshold going down  
-    if(currentY > NAV_NEAR_TOP_THRESHOLD && !isGoingUp)
-      setHideNav(true)
-
-    // show nav 
-    if(isNearTop)
       setHideNav(false)
-  
-
+    } else {
+      setIsNearTop(false)
+    }
+    
+    // Determine if we are scrolling down or up
     if(previousY - currentY > 0){
       setHideNav(false)
       isGoingUp = true
     } else {
       isGoingUp = false
     }
+
+    // hide nav after bypassing threshold going down  
+    if(currentY > NAV_NEAR_TOP_THRESHOLD && !isGoingUp)
+      setHideNav(true)
       
     previousY = currentY
   }
@@ -151,6 +168,11 @@ export default () => {
       window.removeEventListener('scroll', handleScroll)
     }
   }, [])
+
+  // responsible for sending menu state upword to parent component
+  useEffect(() => {
+    setMenuState(menuOpen)
+  }, [menuOpen])
 
   return (
     <Container hideNav={hideNav} isTop={isTop} isNearTop={isNearTop}>
@@ -167,11 +189,12 @@ export default () => {
           ))
         }
         </ul>
-        <StyledButton to="#">resume</StyledButton>
+        <StyledSmallButton to="#">resume</StyledSmallButton>
       </Nav>
-      <BurgerButton onClick={handleClick}>
+      <BurgerButton onClick={handleBurgerClick}>
         <BurgerButtonBars menuOpen={menuOpen} />
       </BurgerButton>
+      <SideNav menuOpen={menuOpen} />
     </Container>
   )
 }

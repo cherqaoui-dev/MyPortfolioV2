@@ -1,12 +1,20 @@
 import React from "react"
 import styled from "styled-components"
+import { media } from "../styles"
 
 const Container = styled.div`
   padding: 100px 150px 0;
+  filter: ${props => props.menuState ? `blur(3px)` : `none`};
+  transition: all .25s ease-in;
+  ${media.phoneL`padding: 100px 30px 0;`}
+  ${media.phone`padding: 100px 20px 0;`}
 `
 
-export default ({children}) => (
-  <Container>
-    {children}
-  </Container>
-)
+export default ({children, menuState}) => {
+
+  return (
+    <Container menuState={menuState}>
+      {children}
+    </Container>
+  )
+}

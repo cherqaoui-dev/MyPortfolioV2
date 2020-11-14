@@ -1,6 +1,7 @@
 const colors = {
   navy: '#0a192f',
-  lightNavy: '#0a192fd9',
+  lightNavy: '#172a45',
+  transparentNavy: '#0a192fd9',
   navyShadow: '#020c1b',
   grey: '#4c5772',
   slate: '#8892b0',
