@@ -4,6 +4,7 @@ import { media } from "../styles"
 
 const Container = styled.div`
   padding: 100px 150px 0;
+  max-width: 1600px;
   filter: ${props => props.menuState ? `blur(3px)` : `none`};
   transition: all .25s ease-in;
   ${media.phoneL`padding: 100px 30px 0;`}

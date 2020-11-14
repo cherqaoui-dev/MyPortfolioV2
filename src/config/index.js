@@ -13,7 +13,7 @@ module.exports = {
   contact: {
     email: 'cherqaoui.elmehdi@gmail.com'
   },
-  social: {
+  socialLinks: {
     facebook: 'https://www.facebook.com/meddiiiiii',
     twitter: 'https://twitter.com/__void____',
     instagram: '#',

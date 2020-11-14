@@ -118,14 +118,19 @@ export default ({setMenuState}) => {
   const [isNearTop, setIsNearTop] = useState(true)
   const [hideNav, setHideNav] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
-
-  useEffect(() => console.log(hideNav), [hideNav])
+  const [scrollPosition, setScrollPosition] = useState(0)
 
   const handleBurgerClick = () => {
-    if(!menuOpen)
+    if(!menuOpen) {
+      /* keep track of the previous position
+      in order to return after menu close */
+      setScrollPosition(window.scrollY)
       document.body.style.position = 'fixed'
-    else
+    } else {
       document.body.style.position = 'static'
+      // scroll back to the last position 
+      window.scrollTo(0, scrollPosition)
+    }
 
     setMenuOpen(!menuOpen)
   }
