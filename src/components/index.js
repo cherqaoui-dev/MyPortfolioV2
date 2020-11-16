@@ -3,6 +3,7 @@ import Header from './header'
 import Footer from './footer'
 import SocialSideBar from './social-sidebar'
 import EmailSidebar from './email-sidebar'
+import Section from './section'
 
 export {
   Main,
@@ -10,4 +11,5 @@ export {
   Footer,
   SocialSideBar,
   EmailSidebar,
+  Section,
 }
