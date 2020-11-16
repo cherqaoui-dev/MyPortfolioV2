@@ -8,11 +8,10 @@ const Container = styled.div`
   padding-top: 10px;
 
   position: fixed;
-  top: 30vh;
+  top: 40vh;
   left: ${props => props.orientation === 'left' ? 0 : 'unset'};
   right: ${props => props.orientation === 'right' ? 0 : 'unset'};
   z-index: 2;
-  
 
   display: flex;
   flex-direction: column;
@@ -23,7 +22,7 @@ const Container = styled.div`
   fill: ${colors.lightSlate};
   overflow: hidden;
 
-  ${media.phoneL`display: none`}
+  ${media.tablet`display: none`}
 `
 
 const VerticalLine = styled.div`

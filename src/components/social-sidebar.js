@@ -18,10 +18,10 @@ const SocialLink = styled(Link)`
   width: 24px;
   height: 24px;
   color: inherit;
-  transition: all 0.25s ease-in;
+  transition: all 0.15s ease-in;
   &:hover {
     fill: ${colors.green};
-    transform: translateY(-5px);
+    transform: translateY(-3px);
   }
 `
 
