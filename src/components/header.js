@@ -25,6 +25,8 @@ const Container = styled.header`
   box-shadow: ${props => props.isTop ? `none` : `0 10px 30px -10px ${colors.navyShadow}`};
   transition: all 0.2s cubic-bezier(.55,.06,.68,.19);
 
+  ${media.tabletL`padding: 0 100px;`}
+  ${media.tablet`padding: 0 60px;`}
   ${media.phoneL`padding: 0 30px;`}
   ${media.phone`padding: 0 20px;`}
 `
