@@ -1,26 +1,30 @@
 import React from "react"
 import styled from "styled-components"
-import { media, colors, fonts, fontSizes } from "../styles"
+import { media, colors, fonts } from "../styles"
 
 const Container = styled.section`
+  max-width: 900px;
+  margin: 0 auto;
   padding: 100px 0;
   overflow: hidden;
   ${media.phoneL`padding: 80px 0;`}
   ${media.phone`padding: 60px 0;`}
 `
-// After top need to be sync with h2 in all media query breakpoints
-const Heading = styled.h2`
+
+const Heading = styled.h4`
   position: relative;
   display: inline-block;
   font-family: ${fonts.mono};
-  font-size: ${fontSizes.xxl};
+  font-weight: 700;
+  color: ${colors.lightestSlate};
   text-transform: capitalize;
+
+  margin: 10px 0 40px;
 
   &:before {
     counter-increment: section;
     content: '0' counter(section) '. ';
     color: ${colors.green};
-    font-size: ${fontSizes.xl};
   }
   &:after {
     content: '';
@@ -28,17 +32,17 @@ const Heading = styled.h2`
     height: 1px;
 
     position: absolute;
-    top: 80%;
+    top: 50%;
     right: -103vw;
 
     background-color: ${colors.lightestNavy};
   }
 `
 
-export default ({children, name}) => {
+export default ({children, title}) => {
   return (
     <Container>
-      <Heading>{name}</Heading>
+      <Heading>{title}</Heading>
       {children}
     </Container>
   )

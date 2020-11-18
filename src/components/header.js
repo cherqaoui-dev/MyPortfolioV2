@@ -105,9 +105,8 @@ const BurgerButtonBars = styled.div`
 
 `
 
-const StyledSmallButton = styled(StyledButton)`
+const ResumeButton = styled(StyledButton)`
   padding: 10px;
-  font-size: ${fontSizes.xs};
 `
 
 export default ({setMenuState}) => {
@@ -196,7 +195,7 @@ export default ({setMenuState}) => {
           ))
         }
         </ul>
-        <StyledSmallButton to="#">resume</StyledSmallButton>
+        <ResumeButton to="#">resume</ResumeButton>
       </Nav>
       <BurgerButton onClick={handleBurgerClick}>
         <BurgerButtonBars menuOpen={menuOpen} />

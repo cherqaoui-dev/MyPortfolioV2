@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import SideBar from "./sidebar"
-import { colors } from "../styles"
+import { colors, media } from "../styles"
 import { socialLinks } from "../config"
 import {IconLinkedin, IconFacebook, IconTwitter, IconInstagram, IconGithub, IconCodepen} from "./icons" 
 
@@ -21,8 +21,13 @@ const SocialLink = styled(Link)`
   transition: all 0.15s ease-in;
   &:hover {
     fill: ${colors.green};
-    transform: translateY(-3px);
+    transform: translateY(-2px);
   }
+
+  ${media.tabletL`
+    width: 16px;
+    height: 16px;
+  `}
 `
 
 export default () => {

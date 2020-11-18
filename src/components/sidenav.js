@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 import { navLinks } from "../config"
 import { StyledButton } from "../styles/partials"
-import { colors, fontSizes, fonts, media } from "../styles"
+import { colors, fontSizes, fonts } from "../styles"
 
 //transform: translateX(80%);
 const Container = styled.div`
