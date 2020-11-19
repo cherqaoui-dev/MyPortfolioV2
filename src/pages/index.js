@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { graphql } from "gatsby"
 import styled from "styled-components"
-import {Main, Header, Footer, SocialSideBar, EmailSidebar, Section} from "../components"
+import {Main, Header, Footer, SocialSideBar, EmailSidebar} from "../components"
 import { Hero, About } from "../components/sections"
 
 const LayoutStyle = styled.div`

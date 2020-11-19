@@ -43,6 +43,12 @@ html, body {
   overflow-x: initial;
 }
 
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 18px;
+  }
+}
+
 h1,
 h2,
 h3,
