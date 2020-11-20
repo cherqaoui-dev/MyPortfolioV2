@@ -33,7 +33,7 @@ const ContactButton = styled(StyledButton)`
 `
 
 export default ({data}) => {
-  const {frontmatter, html} = data[0].node
+  const {frontmatter, html} = data
 
   return (
     <Container>
@@ -41,7 +41,7 @@ export default ({data}) => {
       <Name>{frontmatter.name}</Name>
       <Slogan>{frontmatter.slogan}</Slogan>
       <Description dangerouslySetInnerHTML={{ __html: html }} />
-      <ContactButton>get in touch</ContactButton>
+      <ContactButton to="#">get in touch</ContactButton>
     </Container>
   )
 }

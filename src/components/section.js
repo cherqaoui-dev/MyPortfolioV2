@@ -19,7 +19,7 @@ const Heading = styled.h4`
   color: ${colors.lightestSlate};
   text-transform: capitalize;
 
-  margin: 10px 0 40px;
+  margin: 10px 0 60px;
 
   &:before {
     counter-increment: section;

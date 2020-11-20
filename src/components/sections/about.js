@@ -60,14 +60,13 @@ const Description = styled.div`
 `
 
 const SkillList = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
   max-width: 320px;
   margin-top: 20px;
   font-size: ${fontSizes.md};
   ${media.phoneL`margin: 20px auto`}
-`
-const Column = styled.div`
-  flex: 50%;
 `
 const SkillItem = styled.div`
   &:before {
@@ -78,7 +77,7 @@ const SkillItem = styled.div`
 `
 
 export default ({data}) => {
-  const {frontmatter, html} = data[0].node
+  const {frontmatter, html} = data
   const { title, avatar, skills } = frontmatter
 
   return (
@@ -87,22 +86,11 @@ export default ({data}) => {
         <WideColumn>
           <Description dangerouslySetInnerHTML={{ __html: html }} />
           <SkillList>
-            <Column>
-              {
-                skills && skills.map((skill, i) => {
-                  if(i % 2 === 0) 
-                    return (<SkillItem key={i}>{skill}</SkillItem>)
-                })
-              }
-            </Column>
-            <Column>
-              {
-                skills && skills.map((skill, i) => {
-                  if(i % 2 === 1) 
-                    return (<SkillItem key={i}>{skill}</SkillItem>)
-                })
-              }
-            </Column>
+          {
+            skills && skills.map((skill, i) => {
+              return (<SkillItem key={i}>{skill}</SkillItem>)
+            })
+          }
           </SkillList>
         </WideColumn>
         <NarrowColumn>
