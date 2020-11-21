@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { graphql } from "gatsby"
 import styled from "styled-components"
 import {Main, Header, Footer, SocialSideBar, EmailSidebar} from "../components"
-import { Hero, About, Jobs } from "../components/sections"
+import { Hero, About, Jobs, Projects } from "../components/sections"
 
 const LayoutStyle = styled.div`
   min-height: 100vh;
@@ -25,6 +25,12 @@ export default function Home({data}) {
           <Hero data={data.hero.edges[0].node} />
           <About data={data.about.edges[0].node} />
           <Jobs data={data.jobs.edges} />
+          <Projects data={
+            {
+            'featuredList': data.featured.edges,
+            'cardList': data.others.edges
+            }
+          } />
         </Main>
         <Footer />
       </LayoutStyle>

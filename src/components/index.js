@@ -4,6 +4,8 @@ import Footer from './footer'
 import SocialSideBar from './social-sidebar'
 import EmailSidebar from './email-sidebar'
 import Section from './section'
+import Featured from './featured-project'
+import Card from './card-project'
 
 export {
   Main,
@@ -12,4 +14,6 @@ export {
   SocialSideBar,
   EmailSidebar,
   Section,
+  Featured,
+  Card
 }
