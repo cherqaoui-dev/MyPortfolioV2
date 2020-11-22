@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from "gatsby"
 import styled from "styled-components"
 import { colors, media, fonts } from "../../styles"
 import {StyledButton} from "../../styles/partials"
@@ -41,7 +42,9 @@ export default ({data}) => {
       <Name>{frontmatter.name}</Name>
       <Slogan>{frontmatter.slogan}</Slogan>
       <Description dangerouslySetInnerHTML={{ __html: html }} />
-      <ContactButton to="#">get in touch</ContactButton>
+      <Link to="#">
+        <ContactButton>get in touch</ContactButton>
+      </Link>
     </Container>
   )
 }

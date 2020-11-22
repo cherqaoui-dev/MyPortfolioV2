@@ -15,6 +15,7 @@ const Container = styled.div`
   `}
 `
 const WideColumn = styled.div`
+  max-width: 500px;
   flex: 55%;
 `
 const NarrowColumn = styled.div`

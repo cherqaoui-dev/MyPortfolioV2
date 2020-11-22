@@ -1,5 +1,7 @@
 ---
 title: 'Building a Media player app for Android'
+external: '#'
+github: '#'
 technologies:
   - Java
   - Android

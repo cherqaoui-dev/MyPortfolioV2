@@ -96,6 +96,7 @@ export const pageQuery = graphql`
             }
             technologies
             external
+            github
           }
           html
         }
@@ -106,6 +107,8 @@ export const pageQuery = graphql`
         node {
           frontmatter {
             title
+            external
+            github
             technologies
           }
           html

@@ -1,5 +1,7 @@
 ---
 title: 'Creating a Twitter Automation tool'
+external: '#'
+github: '#'
 technologies:
   - Python
   - TwitterAPI

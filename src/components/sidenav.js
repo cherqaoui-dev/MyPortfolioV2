@@ -41,7 +41,7 @@ const NavLink = styled(Link)`
     font-size: ${fontSizes.xl};
   }
 `
-const StyledLargeButton = styled(StyledButton)`
+const ResumeButton = styled(StyledButton)`
   margin-top: 40px;
   padding: 20px 50px;
   font-size: ${fontSizes.md};
@@ -57,7 +57,9 @@ const SideNav = (props) => (
           </NavLink>
         ))
       }
-      <StyledLargeButton to="#">resume</StyledLargeButton>
+      <Link to="#">
+        <ResumeButton>resume</ResumeButton>
+      </Link>
     </Nav>
   </Container>
 )

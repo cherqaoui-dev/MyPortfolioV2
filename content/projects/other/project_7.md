@@ -1,5 +1,7 @@
 ---
 title: 'Salaries Manager'
+external: '#'
+github: '#'
 technologies:
   - J2EE
   - HTML

@@ -1,5 +1,7 @@
 ---
 title: 'My Knife Hit'
+external: '#'
+github: '#'
 technologies:
   - CocosCreator
   - Typescript

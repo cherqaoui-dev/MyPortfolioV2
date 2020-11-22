@@ -1,5 +1,7 @@
 ---
 title: 'Invoice Manager'
+external: '#'
+github: '#'
 technologies:
   - J2EE
   - HTML

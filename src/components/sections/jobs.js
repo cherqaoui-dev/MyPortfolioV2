@@ -103,7 +103,7 @@ export default ({data}) => {
               const { frontmatter } = job.node;
               const {company, title, startDate, endDate, tasks} = frontmatter;
               return (
-                <JobDetails isVisible={activeTab === i}>
+                <JobDetails key={i} isVisible={activeTab === i}>
                   <Title>
                     {title} <Company>@ {company}</Company>
                   </Title>

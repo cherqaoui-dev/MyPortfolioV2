@@ -195,7 +195,9 @@ export default ({setMenuState}) => {
           ))
         }
         </ul>
-        <ResumeButton to="#">resume</ResumeButton>
+        <Link to="#">
+          <ResumeButton>resume</ResumeButton>
+        </Link>
       </Nav>
       <BurgerButton onClick={handleBurgerClick}>
         <BurgerButtonBars menuOpen={menuOpen} />

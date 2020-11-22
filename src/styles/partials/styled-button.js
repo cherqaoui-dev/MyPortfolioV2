@@ -1,8 +1,7 @@
-import {Link} from "gatsby"
 import styled from "styled-components"
 import { colors, fonts, fontSizes} from "../"
 
-const StyledButton = styled(Link)`
+const StyledButton = styled.button`
   font-family: ${fonts.mono};
   font-size: ${fontSizes.sm};
   color: ${colors.green};

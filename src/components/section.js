@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { media, colors, fonts } from "../styles"
 
 const Container = styled.section`
-  max-width: 900px;
+  max-width: 950px;
   margin: 0 auto;
   padding: 100px 0;
   overflow: hidden;

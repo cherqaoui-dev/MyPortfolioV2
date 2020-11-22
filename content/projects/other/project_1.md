@@ -1,5 +1,7 @@
 ---
 title: 'Building an Ecommerce platform'
+external: '#'
+github: '#'
 technologies: 
   - 'Laravel'
   - 'Vue.js'

@@ -1,9 +1,9 @@
 import { css } from 'styled-components'
 const sizes = {
-  tabletL: 1200,
-  tablet: 992,
-  phoneL: 768,
-  phone: 480,
+  tabletL: 1199,
+  tablet: 991,
+  phoneL: 767,
+  phone: 479,
 };
 
 export default Object.keys(sizes).reduce((acc, label) => {

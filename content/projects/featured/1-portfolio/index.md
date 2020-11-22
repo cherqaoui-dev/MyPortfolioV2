@@ -1,6 +1,7 @@
 ---
 title: 'Portfolio'
 cover: './screenshot.png'
+github: '#'
 external: 'http://portfolio.voidx.website'
 technologies: 
   - 'Laravel'
@@ -8,4 +9,4 @@ technologies:
   - 'SASS'
 ---
 
-An amazing, responsive, good looking and easy to use Portfolio manager with the ability to edit your professional information and choose between multiple themes.
+An amazing, responsive, good looking and easy to use Portfolio manager with the ability to edit your professional information and choose between multiple themes

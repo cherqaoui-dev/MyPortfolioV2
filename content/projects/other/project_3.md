@@ -1,5 +1,7 @@
 ---
 title: 'Building a Dashboard and API to create/manage audio lists'
+external: '#'
+github: '#'
 technologies:
   - Laravel
   - HTML
