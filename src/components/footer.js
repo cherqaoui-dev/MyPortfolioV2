@@ -4,7 +4,7 @@ import styled from "styled-components"
 import { media, colors, fonts, fontSizes } from "../styles"
 import { site } from "../config"
 
-const Container = styled.header`
+const Container = styled.footer`
   margin-top: 40px;
   padding: 20px;
   display: flex;
