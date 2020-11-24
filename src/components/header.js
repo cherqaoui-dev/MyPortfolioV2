@@ -82,7 +82,7 @@ const BurgerButtonBars = styled.div`
   transform: translateY(-50%);
   width: 36px;
   height: 2px;
-  background-color: ${props => props.menuOpen ? `transparent` : `${colors.green}`};
+  background-color: ${props => props.menuState ? `transparent` : `${colors.green}`};
   transition: all 0.25s ease-in;
 
   &:before, &:after {
@@ -95,12 +95,12 @@ const BurgerButtonBars = styled.div`
   }
 
   &:before {
-    top: ${props => props.menuOpen ? `0` : `-17px`};
-    transform: ${props => props.menuOpen ? `rotate(135deg)` : `rotate(0)`};
+    top: ${props => props.menuState ? `0` : `-17px`};
+    transform: ${props => props.menuState ? `rotate(135deg)` : `rotate(0)`};
   }
   &:after {
-    bottom: ${props => props.menuOpen ? `0` : `-17px`};
-    transform: ${props => props.menuOpen ? `rotate(45deg)` : `rotate(0)`};
+    bottom: ${props => props.menuState ? `0` : `-17px`};
+    transform: ${props => props.menuState ? `rotate(45deg)` : `rotate(0)`};
   }
 
 `
@@ -109,21 +109,32 @@ const ResumeButton = styled(StyledButton)`
   padding: 10px;
 `
 
-export default ({setMenuState}) => {
+export default ({menuState, setMenuState}) => {
 
   const NAV_NEAR_TOP_THRESHOLD = 60
   let previousY = 0
   let isGoingUp = false
 
+  const [menuOpen, setMenuOpen] = useState(false)
   const isFirstRun = useRef(true);
   const [isTop, setIsTop] = useState(true)
   const [isNearTop, setIsNearTop] = useState(true)
   const [hideNav, setHideNav] = useState(false)
-  const [menuOpen, setMenuOpen] = useState(false)
   const [scrollPosition, setScrollPosition] = useState(0)
 
   const handleBurgerClick = () => {
-    setMenuOpen(!menuOpen)
+    if(!menuState) {
+      console.log(`setting scroll position to ${window.scrollY}`)
+      // keep track of the previous position
+      setScrollPosition(window.scrollY)
+      document.body.style.overflowY = 'hidden'
+    } else {
+      document.body.style.overflowY = ''
+      console.log(`going to ${scrollPosition}`)
+      // scroll back to the last position 
+      window.scrollTo(0, scrollPosition)
+    }
+    setMenuState(!menuState)
   }
 
   const handleScroll = () => {
@@ -158,25 +169,6 @@ export default ({setMenuState}) => {
     previousY = currentY
   }
 
-  // responsible for sending menu state upword to parent component
-  useEffect(() => {
-    if(!isFirstRun.current){
-      if(menuOpen) {
-        /* keep track of the previous position
-        in order to return after menu close */
-        setScrollPosition(window.scrollY)
-        document.body.style.position = 'fixed'
-      } else {
-        document.body.style.position = 'static'
-        // scroll back to the last position 
-        window.scrollTo(0, scrollPosition)
-      }
-      setMenuState(menuOpen)
-    } else {
-      isFirstRun.current = false
-    }
-  }, [menuOpen])
-
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)
     return () => { 
@@ -204,9 +196,9 @@ export default ({setMenuState}) => {
         </Link>
       </Nav>
       <BurgerButton onClick={handleBurgerClick}>
-        <BurgerButtonBars menuOpen={menuOpen} />
+        <BurgerButtonBars menuState={menuState} />
       </BurgerButton>
-      <SideNav menuOpen={menuOpen} setMenuState={setMenuOpen} />
+      <SideNav menuState={menuState} setMenuState={setMenuState} />
     </Container>
   )
 }

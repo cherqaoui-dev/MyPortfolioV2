@@ -15,7 +15,7 @@ const Container = styled.div`
   height: 100vh;
   
   background-color: ${colors.lightNavy};
-  transform: ${props => props.menuOpen ? `translateX(0)`: `translateX(100%)`};
+  transform: ${props => props.menuState ? `translateX(0)`: `translateX(100%)`};
   transition: all 0.25s ease-in;
 `
 
@@ -50,12 +50,12 @@ const ResumeButton = styled(StyledButton)`
 const SideNav = (props) => {
 
   const handleNavLinkClick = () => {
+    document.body.style.overflowY = ''
     props.setMenuState(false)
-    document.body.style.position = 'static'
   }
   
   return (
-    <Container menuOpen={props.menuOpen}>
+    <Container menuState={props.menuState}>
       <Nav>
         {
           navLinks && navLinks.map(({name, url}, i) => (

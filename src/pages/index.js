@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { graphql } from "gatsby"
 import styled from "styled-components"
 import {Main, Header, Footer, SocialSideBar, EmailSidebar, Loader, SEO} from "../components"
@@ -19,8 +19,7 @@ export default function Home({data}) {
     <React.Fragment>
       <SEO />
       <LayoutStyle>
-        <Loader />
-        <Header setMenuState={setMenuState} />
+        <Header menuState={menuState} setMenuState={setMenuState} />
         <SocialSideBar />
         <EmailSidebar />
         <Main menuState={menuState}>
