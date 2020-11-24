@@ -1,8 +1,8 @@
 import React, { useState } from "react"
 import { graphql } from "gatsby"
 import styled from "styled-components"
-import {Main, Header, Footer, SocialSideBar, EmailSidebar} from "../components"
-import { Hero, About, Jobs, Projects } from "../components/sections"
+import {Main, Header, Footer, SocialSideBar, EmailSidebar, Loader, SEO} from "../components"
+import { Hero, About, Jobs, Projects, Contact } from "../components/sections"
 
 const LayoutStyle = styled.div`
   min-height: 100vh;
@@ -17,20 +17,26 @@ export default function Home({data}) {
 
   return (
     <React.Fragment>
+      <SEO />
       <LayoutStyle>
+        <Loader />
         <Header setMenuState={x => setMenuState(x)} />
         <SocialSideBar />
         <EmailSidebar />
         <Main menuState={menuState}>
-          <Hero data={data.hero.edges[0].node} />
-          <About data={data.about.edges[0].node} />
-          <Jobs data={data.jobs.edges} />
-          <Projects data={
-            {
-            'featuredList': data.featured.edges,
-            'cardList': data.others.edges
+          <Hero id="hero" data={data.hero.edges[0].node} />
+          <About id="about" data={data.about.edges[0].node} />
+          <Jobs id="jobs" data={data.jobs.edges} />
+          <Projects 
+            id="projects"
+            data={
+              {
+              'featuredList': data.featured.edges,
+              'cardList': data.others.edges
+              }
             }
-          } />
+          />
+          <Contact id="contact" data={data.contact.edges[0].node}/>
         </Main>
         <Footer />
       </LayoutStyle>
@@ -111,6 +117,13 @@ export const pageQuery = graphql`
             github
             technologies
           }
+          html
+        }
+      }
+    }
+    contact: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/contact/" } }) {
+      edges {
+        node {
           html
         }
       }

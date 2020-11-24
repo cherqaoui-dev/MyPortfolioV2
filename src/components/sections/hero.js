@@ -1,10 +1,11 @@
 import React from 'react'
 import {Link} from "gatsby"
 import styled from "styled-components"
-import { colors, media, fonts } from "../../styles"
+import { colors, media, fonts, fontSizes } from "../../styles"
 import {StyledButton} from "../../styles/partials"
+import { contact } from "../../config"
 
-const Container = styled.div`
+const Container = styled.section`
   max-width: 900px;
   margin: 0 auto;
   padding: 100px 0;
@@ -15,6 +16,7 @@ const Container = styled.div`
 const Greeting = styled.div`
   margin-bottom: 30px;
   font-family: ${fonts.mono};
+  font-size: ${fontSizes.md};
   color: ${colors.green};
 `
 const Name = styled.h1`
@@ -33,16 +35,16 @@ const ContactButton = styled(StyledButton)`
   display: inline-block;
 `
 
-export default ({data}) => {
+export default ({id, data}) => {
   const {frontmatter, html} = data
 
   return (
-    <Container>
+    <Container id={id}>
       <Greeting>Hi, my name is</Greeting>
       <Name>{frontmatter.name}</Name>
       <Slogan>{frontmatter.slogan}</Slogan>
       <Description dangerouslySetInnerHTML={{ __html: html }} />
-      <Link to="#">
+      <Link href={`mailto:${contact.email}`}>
         <ContactButton>get in touch</ContactButton>
       </Link>
     </Container>

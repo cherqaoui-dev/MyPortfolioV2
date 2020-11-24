@@ -47,22 +47,33 @@ const ResumeButton = styled(StyledButton)`
   font-size: ${fontSizes.md};
 `
 
-const SideNav = (props) => (
-  <Container menuOpen={props.menuOpen}>
-    <Nav>
-      {
-        navLinks && navLinks.map(({name, url}, i) => (
-          <NavLink key={i} to={url}>
-            <span>{name}</span>
-          </NavLink>
-        ))
-      }
-      <Link to="#">
-        <ResumeButton>resume</ResumeButton>
-      </Link>
-    </Nav>
-  </Container>
-)
+const SideNav = (props) => {
 
+  const handleNavLinkClick = () => {
+    props.setMenuState(false)
+    document.body.style.position = 'static'
+  }
+  
+  return (
+    <Container menuOpen={props.menuOpen}>
+      <Nav>
+        {
+          navLinks && navLinks.map(({name, url}, i) => (
+            <NavLink 
+            key={i} 
+            to={url} 
+            onClick={handleNavLinkClick}
+            >
+              <span>{name}</span>
+            </NavLink>
+          ))
+        }
+        <Link href="/resume.pdf" target="_blank">
+          <ResumeButton>resume</ResumeButton>
+        </Link>
+      </Nav>
+    </Container>
+  )
+}
 export default SideNav
 

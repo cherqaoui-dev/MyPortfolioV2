@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from "gatsby"
 import styled from "styled-components"
-import {fonts, colors, fontSizes, media} from "../styles"
+import {fonts, colors, fontSizes} from "../styles"
 import {IconFolder, IconExternal, IconGithub} from "./icons"
 
 const Container = styled.div`
@@ -33,7 +33,7 @@ const Icon = styled.div`
 `
 const LinkList = styled.ul``
 const LinkItem = styled.li`
-  display: inline;
+  display: inline-block;
   margin-left: 10px;
 `
 const IconLink = styled(Link)`
@@ -81,7 +81,7 @@ export default ({data, isVisible}) => {
           </Icon>
           <LinkList>
             {
-              external && (
+              external !== "#" && (
               <LinkItem>
                 <IconLink to={external}>
                   <IconExternal />
@@ -90,7 +90,7 @@ export default ({data, isVisible}) => {
               )
             }
             {
-              github && (
+              github !== "#" && (
               <LinkItem>
                 <IconLink to={github}>
                   <IconGithub />

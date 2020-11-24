@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import styled from "styled-components"
 import { Section, Featured, Card } from "../"
 import { StyledButton } from "../../styles/partials"
+import { colors, media } from "../../styles"
 
 const Container = styled.div`
   display: flex;
@@ -9,7 +10,14 @@ const Container = styled.div`
   align-items: center;
 `
 const FeaturedList = styled.div`
-  margin-bottom: 100px;
+  width: 100%;
+  margin-bottom: 200px;
+  ${media.phoneL`margin-bottom: 160px;`}
+  ${media.phone`margin-bottom: 120px;`}
+` 
+const CardsTitle = styled.h3`
+  color: ${colors.lightestSlate};
+  margin-bottom: 50px;
 `
 const CardList = styled.div`
   display: grid;
@@ -22,7 +30,7 @@ const ShowMoreButton = styled(StyledButton)`
   padding: 1em 1.5em;
 `
 
-export default ({data}) => {
+export default ({id, data}) => {
   const {featuredList, cardList} = data
   const CARDS_TO_ADD = 3
   const MIN_CARDS_NUMBER = 6
@@ -37,7 +45,7 @@ export default ({data}) => {
   }
 
   return (
-    <Section title="some things i’ve built">
+    <Section id={id} title="some things i’ve built">
         <Container>
           <FeaturedList>
             {
@@ -48,6 +56,7 @@ export default ({data}) => {
               })
             }
           </FeaturedList>
+          <CardsTitle>Other Noteworthy Projects</CardsTitle>
           <CardList>
             {
               cardList && cardList.map( (card, i) => {

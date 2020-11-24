@@ -1,0 +1,1 @@
+I'm currently looking for new opportunities, whether you have a job opportunity, a question or just want to say hi, my inbox is always open.

@@ -9,13 +9,15 @@ const {site} = config
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    title: site.siteTitle,
-    description: site.siteDescription,
-    keywords: site.siteKeywords,
-    url: site.siteUrl
+    title: site.title,
+    description: site.description,
+    keywords: site.keywords,
+    url: site.url,
+    image: site.image,
+    twitterUsername: site.twitterUsername,
   },
   plugins: [
-    //'gatsby-plugin-styled-components',
+    'gatsby-plugin-react-helmet',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     'gatsby-transformer-remark',
@@ -26,5 +28,12 @@ module.exports = {
         path: `${__dirname}/content/`,
       },
     },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        // replace "UA-XXXXXXXXX-X" with your own Tracking ID
+        trackingId: site.googleAnalyticsID,
+      },
+    }
   ],
 }

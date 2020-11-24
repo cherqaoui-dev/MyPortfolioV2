@@ -1,11 +1,14 @@
 module.exports = {
   site: {
-    siteTitle: 'Cherqaoui Mehdi | Software Engineer',
-    siteDescription:
-      'Cherqaoui Mehdi is a software engineer based in Casablanca, Morocco who specializes in developing (and occasionally designing) exceptional, high-quality websites and applications.',
-    siteKeywords:
-      'Cherqaoui Mehdi, Cherqaoui, Mehdi, voidx, software engineer, front-end engineer, web developer, javascript, morocco, casablanca',
-    siteUrl: 'http://www.cherqaoui.dev',
+    title: 'Cherqaoui Mehdi | Software Developer',
+    description:
+      'Cherqaoui Mehdi is a software developer based in Casablanca, Morocco who specializes in developing (and occasionally designing) exceptional, high-quality websites and applications.',
+    keywords:
+      'Cherqaoui, Mehdi, voidx, software, developer, frontend, backend, javascript, typescript, laravel, php, java, android, angular, react, morocco, casablanca',
+    url: 'https://www.cherqaoui.dev',
+    image: '/me.jpg',
+    twitterUsername: '@__void____',
+    githubRepository: 'https://github.com/cherqaoui-dev/MyPortfolioV2',
     siteLanguage: 'en_US',
     googleAnalyticsID: 'UA-173119113-1',
     location: 'Casablanca, Morocco',

@@ -6,6 +6,8 @@ import EmailSidebar from './email-sidebar'
 import Section from './section'
 import Featured from './featured-project'
 import Card from './card-project'
+import Loader from './loader'
+import SEO from './seo'
 
 export {
   Main,
@@ -15,5 +17,7 @@ export {
   EmailSidebar,
   Section,
   Featured,
-  Card
+  Card,
+  Loader,
+  SEO,
 }

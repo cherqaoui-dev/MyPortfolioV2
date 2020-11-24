@@ -39,9 +39,9 @@ const Heading = styled.h4`
   }
 `
 
-export default ({children, title}) => {
+export default ({children, title, id}) => {
   return (
-    <Container>
+    <Container id={id}>
       <Heading>{title}</Heading>
       {children}
     </Container>

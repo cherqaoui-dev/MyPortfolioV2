@@ -120,16 +120,24 @@ export default ({data, counter}) => {
           }
         </TechList>
         <LinkList counter={counter}>
+        { 
+          external !== "#" && (
           <LinkItem>
             <IconLink target="_blank" to={external}>
               <IconExternal />
             </IconLink>
           </LinkItem>
+          )
+        }
+        { 
+          github !== "#" && (
           <LinkItem>
             <IconLink target="_blank" to={github}>
               <IconGithub />
             </IconLink>
           </LinkItem>
+          )
+        }
         </LinkList>
       </Info>
     </Container>

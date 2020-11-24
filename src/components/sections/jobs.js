@@ -75,7 +75,7 @@ const TaskItem = styled.li`
   }
 `
 
-export default ({data}) => {
+export default ({id, data}) => {
   const jobs = data
   const [activeTab, setActiveTab] = useState(0)
 
@@ -84,7 +84,7 @@ export default ({data}) => {
   }
 
   return (
-    <Section title="where i've worked">
+    <Section id={id} title="where i've worked">
       <Container>
         <TabsList>
         {

@@ -77,12 +77,12 @@ const SkillItem = styled.div`
   }
 `
 
-export default ({data}) => {
+export default ({id, data}) => {
   const {frontmatter, html} = data
   const { title, avatar, skills } = frontmatter
 
   return (
-    <Section title={title}>
+    <Section id={id} title={title}>
       <Container>
         <WideColumn>
           <Description dangerouslySetInnerHTML={{ __html: html }} />

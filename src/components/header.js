@@ -122,17 +122,6 @@ export default ({setMenuState}) => {
   const [scrollPosition, setScrollPosition] = useState(0)
 
   const handleBurgerClick = () => {
-    if(!menuOpen) {
-      /* keep track of the previous position
-      in order to return after menu close */
-      setScrollPosition(window.scrollY)
-      document.body.style.position = 'fixed'
-    } else {
-      document.body.style.position = 'static'
-      // scroll back to the last position 
-      window.scrollTo(0, scrollPosition)
-    }
-
     setMenuOpen(!menuOpen)
   }
 
@@ -175,8 +164,21 @@ export default ({setMenuState}) => {
     }
   }, [])
 
+  useEffect(() => {
+    document.body.style.position = 'fixed'
+  }, [scrollPosition])
+
   // responsible for sending menu state upword to parent component
   useEffect(() => {
+    if(menuOpen) {
+      /* keep track of the previous position
+      in order to return after menu close */
+      setScrollPosition(window.scrollY)
+    } else {
+      document.body.style.position = 'static'
+      // scroll back to the last position 
+      window.scrollTo(0, scrollPosition)
+    }
     setMenuState(menuOpen)
   }, [menuOpen])
 
@@ -195,14 +197,14 @@ export default ({setMenuState}) => {
           ))
         }
         </ul>
-        <Link to="#">
+        <Link href="/resume.pdf" target="_blank">
           <ResumeButton>resume</ResumeButton>
         </Link>
       </Nav>
       <BurgerButton onClick={handleBurgerClick}>
         <BurgerButtonBars menuOpen={menuOpen} />
       </BurgerButton>
-      <SideNav menuOpen={menuOpen} />
+      <SideNav menuOpen={menuOpen} setMenuState={setMenuOpen} />
     </Container>
   )
 }

@@ -2,14 +2,14 @@
 title: 'About Me'
 avatar: './me.jpg'
 skills:
-  - 'JavaScript'
+  - 'Laravel'
   - 'HTML & CSS'
   - 'React'
-  - 'Node.js'
-  - 'Express'
-  - 'Laravel'
-  - 'Java + Android'
-  - 'Python + Django'
+  - 'Angular'
+  - 'JavaScript'
+  - 'TypeScript'
+  - 'Java'
+  - 'Android'
 ---
 
 Hello! I'm Mehdi, a software developer based in Casablanca Morocco.
