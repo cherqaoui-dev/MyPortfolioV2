@@ -16,7 +16,7 @@ const Container = styled.div`
   
   background-color: ${colors.lightNavy};
   transform: ${props => props.menuState ? `translateX(0)`: `translateX(100%)`};
-  transition: all 0.25s ease-in;
+  transition: all 0.25s linear;
 `
 
 const Nav = styled.nav`
@@ -68,9 +68,9 @@ const SideNav = (props) => {
             </NavLink>
           ))
         }
-        <Link href="/resume.pdf" target="_blank">
+        <a href="/resume.pdf" target="_blank">
           <ResumeButton>resume</ResumeButton>
-        </Link>
+        </a>
       </Nav>
     </Container>
   )

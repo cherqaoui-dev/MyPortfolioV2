@@ -44,9 +44,9 @@ export default ({id, data}) => {
       <Name>{frontmatter.name}</Name>
       <Slogan>{frontmatter.slogan}</Slogan>
       <Description dangerouslySetInnerHTML={{ __html: html }} />
-      <Link href={`mailto:${contact.email}`}>
+      <a href={`mailto:${contact.email}`}>
         <ContactButton>get in touch</ContactButton>
-      </Link>
+      </a>
     </Container>
   )
 }

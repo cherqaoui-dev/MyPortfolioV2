@@ -43,9 +43,9 @@ const Brand = styled.div`
 
   animation: ${animation} 3s ease-out both;
   
-  ${media.tablet`width: 20%;`}
-  ${media.phoneL`width: 30%;`}
-  ${media.phone`width: 50%;`}
+  ${media.tablet`width: 15%;`}
+  ${media.phoneL`width: 20%;`}
+  ${media.phone`width: 25%;`}
 
 `
 
@@ -58,7 +58,7 @@ export default () => {
 
     setTimeout(() => {
       setIsLoading(false)
-      document.body.style.position = 'static'
+      document.body.style.position = ''
     }, 3000)
     
   }, [])

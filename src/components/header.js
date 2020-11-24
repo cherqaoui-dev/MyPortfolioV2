@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react"
+import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import SideNav from "./sidenav"
@@ -83,7 +83,7 @@ const BurgerButtonBars = styled.div`
   width: 36px;
   height: 2px;
   background-color: ${props => props.menuState ? `transparent` : `${colors.green}`};
-  transition: all 0.25s ease-in;
+  transition: all 0.25s linear;
 
   &:before, &:after {
     content: '';
@@ -91,7 +91,7 @@ const BurgerButtonBars = styled.div`
     width: 36px;
     height: 2px;
     background-color: ${colors.green};
-    transition: all 0.25s ease-in;
+    transition: all 0.25s linear;
   }
 
   &:before {
@@ -102,7 +102,6 @@ const BurgerButtonBars = styled.div`
     bottom: ${props => props.menuState ? `0` : `-17px`};
     transform: ${props => props.menuState ? `rotate(45deg)` : `rotate(0)`};
   }
-
 `
 
 const ResumeButton = styled(StyledButton)`
@@ -115,8 +114,6 @@ export default ({menuState, setMenuState}) => {
   let previousY = 0
   let isGoingUp = false
 
-  const [menuOpen, setMenuOpen] = useState(false)
-  const isFirstRun = useRef(true);
   const [isTop, setIsTop] = useState(true)
   const [isNearTop, setIsNearTop] = useState(true)
   const [hideNav, setHideNav] = useState(false)
@@ -124,13 +121,11 @@ export default ({menuState, setMenuState}) => {
 
   const handleBurgerClick = () => {
     if(!menuState) {
-      console.log(`setting scroll position to ${window.scrollY}`)
       // keep track of the previous position
       setScrollPosition(window.scrollY)
       document.body.style.overflowY = 'hidden'
     } else {
       document.body.style.overflowY = ''
-      console.log(`going to ${scrollPosition}`)
       // scroll back to the last position 
       window.scrollTo(0, scrollPosition)
     }
@@ -191,9 +186,9 @@ export default ({menuState, setMenuState}) => {
           ))
         }
         </ul>
-        <Link href="/resume.pdf" target="_blank">
+        <a href="/resume.pdf" target="_blank">
           <ResumeButton>resume</ResumeButton>
-        </Link>
+        </a>
       </Nav>
       <BurgerButton onClick={handleBurgerClick}>
         <BurgerButtonBars menuState={menuState} />
