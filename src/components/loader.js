@@ -60,6 +60,7 @@ export default () => {
       setIsLoading(false)
       document.body.style.position = 'static'
     }, 3000)
+    
   }, [])
 
   return (

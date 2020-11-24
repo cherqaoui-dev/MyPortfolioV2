@@ -20,7 +20,7 @@ export default function Home({data}) {
       <SEO />
       <LayoutStyle>
         <Loader />
-        <Header setMenuState={x => setMenuState(x)} />
+        <Header setMenuState={setMenuState} />
         <SocialSideBar />
         <EmailSidebar />
         <Main menuState={menuState}>

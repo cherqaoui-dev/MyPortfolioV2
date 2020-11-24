@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useRef } from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import SideNav from "./sidenav"
@@ -115,6 +115,7 @@ export default ({setMenuState}) => {
   let previousY = 0
   let isGoingUp = false
 
+  const isFirstRun = useRef(true);
   const [isTop, setIsTop] = useState(true)
   const [isNearTop, setIsNearTop] = useState(true)
   const [hideNav, setHideNav] = useState(false)
@@ -157,30 +158,31 @@ export default ({setMenuState}) => {
     previousY = currentY
   }
 
+  // responsible for sending menu state upword to parent component
+  useEffect(() => {
+    if(!isFirstRun.current){
+      if(menuOpen) {
+        /* keep track of the previous position
+        in order to return after menu close */
+        setScrollPosition(window.scrollY)
+        document.body.style.position = 'fixed'
+      } else {
+        document.body.style.position = 'static'
+        // scroll back to the last position 
+        window.scrollTo(0, scrollPosition)
+      }
+      setMenuState(menuOpen)
+    } else {
+      isFirstRun.current = false
+    }
+  }, [menuOpen])
+
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)
     return () => { 
       window.removeEventListener('scroll', handleScroll)
     }
   }, [])
-
-  useEffect(() => {
-    document.body.style.position = 'fixed'
-  }, [scrollPosition])
-
-  // responsible for sending menu state upword to parent component
-  useEffect(() => {
-    if(menuOpen) {
-      /* keep track of the previous position
-      in order to return after menu close */
-      setScrollPosition(window.scrollY)
-    } else {
-      document.body.style.position = 'static'
-      // scroll back to the last position 
-      window.scrollTo(0, scrollPosition)
-    }
-    setMenuState(menuOpen)
-  }, [menuOpen])
 
   return (
     <Container hideNav={hideNav} isTop={isTop} isNearTop={isNearTop}>
