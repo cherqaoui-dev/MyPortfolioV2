@@ -1,16 +1,9 @@
 import React, {useState} from "react"
 import {Link} from "gatsby"
 import styled from "styled-components"
-import {Main, Header, Footer, SocialSideBar, EmailSidebar, SEO} from "../components"
+import {Main, Header, SocialSideBar, EmailSidebar, SEO} from "../components"
 import {StyledButton} from "../styles/partials"
 import {colors, media, fonts} from "../styles"
-
-const LayoutStyle = styled.div`
-  min-height: 100vh;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  grid-template-columns: 100%;
-`
 
 const Container = styled.div`
   text-align: center;
