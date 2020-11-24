@@ -4,7 +4,7 @@ import { colors, media } from "../styles"
 import { IconBrand } from "./icons"
 
 const Container = styled.div`
-  position: fix;
+  position: fixed;
   z-index: 5;
   top: 0;
   left: 0;
