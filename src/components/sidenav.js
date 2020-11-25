@@ -16,7 +16,7 @@ const Container = styled.div`
   
   background-color: ${colors.lightNavy};
   transform: ${props => props.menuState ? `translateX(0)`: `translateX(100%)`};
-  transition: all 0.25s linear;
+  transition: all 0.15s ease-in;
 `
 
 const Nav = styled.nav`

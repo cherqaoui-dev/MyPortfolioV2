@@ -83,7 +83,7 @@ const BurgerButtonBars = styled.div`
   width: 36px;
   height: 2px;
   background-color: ${props => props.menuState ? `transparent` : `${colors.green}`};
-  transition: all 0.25s linear;
+  transition: all 0.15s ease-in;
 
   &:before, &:after {
     content: '';
@@ -91,7 +91,7 @@ const BurgerButtonBars = styled.div`
     width: 36px;
     height: 2px;
     background-color: ${colors.green};
-    transition: all 0.25s linear;
+    transition: all 0.15s ease-in;
   }
 
   &:before {
@@ -113,7 +113,7 @@ export default ({menuState, setMenuState}) => {
   const NAV_NEAR_TOP_THRESHOLD = 60
   let previousY = 0
   let isGoingUp = false
-
+  
   const [isTop, setIsTop] = useState(true)
   const [isNearTop, setIsNearTop] = useState(true)
   const [hideNav, setHideNav] = useState(false)
