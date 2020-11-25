@@ -1,5 +1,4 @@
 import React from 'react'
-import {Link} from "gatsby"
 import styled from "styled-components"
 import { colors, media, fonts, fontSizes } from "../../styles"
 import {StyledButton} from "../../styles/partials"

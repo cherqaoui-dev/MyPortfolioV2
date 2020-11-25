@@ -5,8 +5,7 @@ import { media } from "../styles"
 const Container = styled.div`
   padding: 100px 150px;
   max-width: 1600px;
-  filter: ${props => props.menuState ? `blur(3px)` : `none`};
-  transition: all .25s ease-in;
+  filter: ${props => props.applyBlur ? `blur(3px)` : `none`};
   counter-reset: section;
   ${media.tabletL`padding: 100px 100px;`}
   ${media.tablet`padding: 100px 60px;`}
@@ -17,7 +16,7 @@ const Container = styled.div`
 export default ({children, menuState}) => {
 
   return (
-    <Container menuState={menuState}>
+    <Container applyBlur={menuState}>
       {children}
     </Container>
   )
