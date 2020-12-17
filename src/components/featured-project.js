@@ -11,6 +11,7 @@ const Container = styled.div`
   grid-template-rows: 1fr;
   overflow: hidden;
   position: relative;
+  margin-bottom: 60px;
 `
 const Cover = styled(Img)`
   grid-column: ${({counter}) => (counter % 2 === 0) ? `1 / 8` : `6/13`};
