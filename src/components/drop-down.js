@@ -32,7 +32,6 @@ export default ({children}) => {
     <Container 
     onMouseEnter={() => setMenuState(true)} 
     onMouseLeave={() => setMenuState(false)}
-    onTouchStart={() => setMenuState(!menuState)}
     >
       {children}
       <DropDownMenu menuState={menuState}>

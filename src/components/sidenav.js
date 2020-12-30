@@ -44,7 +44,7 @@ const NavLink = styled(Link)`
 `
 const ResumeButton = styled(StyledButton)`
   margin-top: 40px;
-  padding: 20px 50px;
+  padding: 20px 24px;
   font-size: ${fontSizes.md};
 `
 
@@ -69,9 +69,12 @@ const SideNav = (props) => {
             </NavLink>
           ))
         }
-        <DropDown>
-          <ResumeButton>resume</ResumeButton>
-        </DropDown>
+        <a href="/CV_Cherqaoui_Mehdi_EN.pdf" target="_blank">
+          <ResumeButton>english resume</ResumeButton>
+        </a>
+        <a href="/CV_Cherqaoui_Mehdi_FR.pdf" target="_blank">
+          <ResumeButton>french resume</ResumeButton>
+        </a>
       </Nav>
     </Container>
   )
