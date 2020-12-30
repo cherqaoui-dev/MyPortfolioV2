@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import SideNav from "./sidenav"
+import DropDown from "./drop-down"
 import { IconBrand } from "./icons"
 import { navLinks } from "../config"
 import { StyledLink, StyledButton } from "../styles/partials"
@@ -186,9 +187,9 @@ export default ({menuState, setMenuState}) => {
           ))
         }
         </ul>
-        <a href="/resume.pdf" target="_blank">
+        <DropDown>
           <ResumeButton>resume</ResumeButton>
-        </a>
+        </DropDown>
       </Nav>
       <BurgerButton onClick={handleBurgerClick}>
         <BurgerButtonBars menuState={menuState} />

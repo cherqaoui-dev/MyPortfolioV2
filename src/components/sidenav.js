@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 import { navLinks } from "../config"
 import { StyledButton } from "../styles/partials"
+import DropDown from "./drop-down"
 import { colors, fontSizes, fonts } from "../styles"
 
 //transform: translateX(80%);
@@ -68,9 +69,9 @@ const SideNav = (props) => {
             </NavLink>
           ))
         }
-        <a href="/resume.pdf" target="_blank">
+        <DropDown>
           <ResumeButton>resume</ResumeButton>
-        </a>
+        </DropDown>
       </Nav>
     </Container>
   )

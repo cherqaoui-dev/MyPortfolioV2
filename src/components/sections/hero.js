@@ -27,6 +27,10 @@ const Slogan = styled.h2`
 const Description = styled.div`
   margin: 20px 0;
   max-width: 500px;
+
+  p {
+    text-align: justify;
+  }
 `
 const ContactButton = styled(StyledButton)`
   margin-top: 30px;
