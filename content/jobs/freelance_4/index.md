@@ -1,7 +1,7 @@
 ---
 date: '2015-07-01'
 startDate: 'July 2015'
-endDate: 'July 2015'
+endDate: 'June 2018'
 company: 'Freelance'
 title: 'Mobile Application Developer'
 tasks:
