@@ -2,7 +2,7 @@
 title: 'Portfolio'
 cover: './screenshot.png'
 github: '#'
-external: 'http://portfolio.voidx.website'
+external: 'https://portfolio.voidx.dev'
 technologies: 
   - 'Laravel'
   - 'jQuery'
