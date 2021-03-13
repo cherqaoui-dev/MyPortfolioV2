@@ -6,6 +6,9 @@ import { contact } from "../config"
 
 
 const VerticalEmail = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: ${fonts.mono};
   font-size: ${fontSizes.xs};
   letter-spacing: 1.4px;
@@ -17,7 +20,9 @@ export default () => {
 
   return (
     <SideBar orientation="right">
-      <VerticalEmail>{contact.email}</VerticalEmail>
+      <VerticalEmail>
+        <span>{contact.email}</span>
+      </VerticalEmail>
     </SideBar>
   )
 }

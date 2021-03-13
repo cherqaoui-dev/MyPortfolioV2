@@ -1,3 +1,4 @@
+---
 title: 'Streamify Dashboard'
 cover: './screenshot.png'
 github: '#'
