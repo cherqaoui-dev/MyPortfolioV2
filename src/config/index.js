@@ -6,7 +6,7 @@ module.exports = {
     keywords:
       'Cherqaoui, Mehdi, voidx, software, developer, frontend, backend, javascript, typescript, laravel, php, java, android, angular, react, morocco, casablanca',
     url: 'https://www.cherqaoui.dev',
-    image: '/portfolio.jpg',
+    image: '/cm.jpg',
     twitterUsername: '@__void____',
     githubRepository: 'https://github.com/cherqaoui-dev/MyPortfolioV2',
     siteLanguage: 'en_US',
