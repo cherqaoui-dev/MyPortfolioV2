@@ -1,13 +1,15 @@
 ---
 title: 'About Me'
-avatar: './me.jpg'
+avatar: './me.png'
 skills:
-  - 'Laravel'
+  - 'Laravel & Vue.js'
   - 'HTML & CSS'
   - 'React'
   - 'Angular'
   - 'JavaScript'
   - 'TypeScript'
+  - 'Tailwind CSS'
+  - 'Alpine.js'
   - 'Java'
   - 'Android'
 ---
