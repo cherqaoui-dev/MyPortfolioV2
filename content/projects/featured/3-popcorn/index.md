@@ -9,4 +9,4 @@ technologies:
   - 'SASS'
 ---
 
-A web version of the famous app Popcorn Time built using Angular, Reactive Programming RxJS and TMDb (The Movie Database) API with the ability to search for movies and tv shows and to get results ordered by many factors such as Trending, Released date ...
+A web version of the famous app Popcorn Time built using Angular, RxJS and TMDb (The Movie Database) API with the ability to search for movies and tv shows.
