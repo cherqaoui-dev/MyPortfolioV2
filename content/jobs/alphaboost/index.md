@@ -1,7 +1,7 @@
 ---
 date: '2021-03-01'
 startDate: 'March 2021'
-endDate: 'Present'
+endDate: 'June 2021'
 company: 'Alphaboost'
 title: 'Full Stack Web Developer'
 tasks:

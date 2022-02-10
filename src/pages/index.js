@@ -88,14 +88,15 @@ export const pageQuery = graphql`
         }
       }
     }
-    featured: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/featured/" } }) {
+    featured: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/featured/"}}, sort: {fields: frontmatter___number}) {
       edges {
         node {
           frontmatter {
+            number
             title
             cover {
               childImageSharp {
-                fluid (quality: 100){
+                fluid(quality: 100) {
                   ...GatsbyImageSharpFluid_withWebp
                 }
               }

@@ -69,10 +69,10 @@ const SideNav = (props) => {
             </NavLink>
           ))
         }
-        <a href="/CV_Cherqaoui_Mehdi_EN.pdf" target="_blank">
+        <a href="/CV-Cherqaoui-Mehdi-EN.pdf" target="_blank">
           <ResumeButton>english resume</ResumeButton>
         </a>
-        <a href="/CV_Cherqaoui_Mehdi_FR.pdf" target="_blank">
+        <a href="/CV-Cherqaoui-Mehdi-FR.pdf" target="_blank">
           <ResumeButton>french resume</ResumeButton>
         </a>
       </Nav>
