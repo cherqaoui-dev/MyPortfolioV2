@@ -4,6 +4,7 @@ import { media } from "../styles"
 
 const Container = styled.div`
   padding: 100px 150px;
+  margin: 0 auto;
   max-width: 1600px;
   filter: ${props => props.applyBlur ? `blur(3px)` : `none`};
   counter-reset: section;
