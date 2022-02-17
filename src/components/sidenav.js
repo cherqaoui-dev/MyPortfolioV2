@@ -3,7 +3,6 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 import { navLinks } from "../config"
 import { StyledButton } from "../styles/partials"
-import DropDown from "./drop-down"
 import { colors, fontSizes, fonts } from "../styles"
 
 //transform: translateX(80%);
@@ -43,9 +42,12 @@ const NavLink = styled(Link)`
   }
 `
 const ResumeButton = styled(StyledButton)`
-  margin-top: 40px;
   padding: 20px 24px;
   font-size: ${fontSizes.md};
+`
+
+const ResumeLink = styled.a`
+  margin-top: 40px;
 `
 
 const SideNav = (props) => {
@@ -69,12 +71,12 @@ const SideNav = (props) => {
             </NavLink>
           ))
         }
-        <a href="/CV-Cherqaoui-Mehdi-EN.pdf" target="_blank">
+        <ResumeLink href="/CV-Cherqaoui-Mehdi-EN.pdf" target="_blank">
           <ResumeButton>english resume</ResumeButton>
-        </a>
-        <a href="/CV-Cherqaoui-Mehdi-FR.pdf" target="_blank">
+        </ResumeLink>
+        <ResumeLink href="/CV-Cherqaoui-Mehdi-FR.pdf" target="_blank">
           <ResumeButton>french resume</ResumeButton>
-        </a>
+        </ResumeLink>
       </Nav>
     </Container>
   )

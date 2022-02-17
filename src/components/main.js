@@ -10,8 +10,8 @@ const Container = styled.div`
   counter-reset: section;
   ${media.tabletL`padding: 100px 100px;`}
   ${media.tablet`padding: 100px 60px;`}
-  ${media.phoneL`padding: 100px 30px;`}
-  ${media.phone`padding: 100px 20px;`}
+  ${media.phoneL`padding: 100px 30px; max-width: 100vw;`}
+  ${media.phone`padding: 100px 20px; max-width: 100vw;`}
 `
 
 export default ({children, menuState}) => {
