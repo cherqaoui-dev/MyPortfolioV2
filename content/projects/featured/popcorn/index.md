@@ -3,7 +3,7 @@ number: 4
 title: 'Popcorn Time Angular'
 cover: './screenshot.png'
 github: '#'
-external: 'https://popcorn-time.voidx.dev'
+external: 'https://popcorntime.voidx.dev'
 technologies: 
   - 'Angular'
   - 'RxJS'
