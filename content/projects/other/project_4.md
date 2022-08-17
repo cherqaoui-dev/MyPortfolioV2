@@ -1,4 +1,5 @@
 ---
+number: 7
 title: 'Creating a Twitter Automation tool'
 external: '#'
 github: '#'

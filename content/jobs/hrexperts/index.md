@@ -1,7 +1,7 @@
 ---
-date: '2014-11-01'
-startDate: 'Novembre 2014'
-endDate: 'March 2015'
+date: '2015-09-01'
+startDate: 'September 2015'
+endDate: 'February 2016'
 company: 'HR Expert'
 title: 'Web Developer'
 tasks:

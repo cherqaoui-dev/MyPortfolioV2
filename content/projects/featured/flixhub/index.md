@@ -1,9 +1,9 @@
 ---
-number: 1
+number: 2
 title: 'Flixhub'
 cover: './screenshot.png'
 github: '#'
-external: 'https://flixhub.info'
+external: 'https://flixhub.voidx.dev'
 technologies: 
   - 'Laravel'
   - 'Vue.js'

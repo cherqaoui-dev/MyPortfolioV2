@@ -1,9 +1,10 @@
 ---
+number: 4
 title: 'Invoice Manager'
 external: '#'
 github: '#'
 technologies:
-  - J2EE
+  - JEE
   - HTML
   - CSS
   - Javascript

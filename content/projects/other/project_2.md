@@ -1,4 +1,5 @@
 ---
+number: 1
 title: 'Building a Media player app for Android'
 external: '#'
 github: '#'

@@ -109,7 +109,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    others: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/other/" } }) {
+    others: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/other/" }}, sort: {fields: frontmatter___number}) {
       edges {
         node {
           frontmatter {

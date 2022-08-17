@@ -1,7 +1,7 @@
 ---
-date: '2014-11-01'
-startDate: 'January 2014'
-endDate: 'June 2014'
+date: '2015-01-01'
+startDate: 'January 2015'
+endDate: 'June 2015'
 company: 'ONDA'
 title: 'Web Developer'
 tasks:

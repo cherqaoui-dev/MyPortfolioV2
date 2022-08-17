@@ -1,5 +1,5 @@
 ---
-number: 2
+number: 3
 title: 'Streamify'
 cover: './screenshot.png'
 github: '#'

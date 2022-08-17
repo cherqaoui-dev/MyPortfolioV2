@@ -1,9 +1,10 @@
 ---
+number: 3
 title: 'Salaries Manager'
 external: '#'
 github: '#'
 technologies:
-  - J2EE
+  - JEE
   - HTML
   - CSS
   - Javascript
