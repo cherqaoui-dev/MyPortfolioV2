@@ -1,7 +1,7 @@
 ---
-date: '2017-01-01'
-startDate: 'January 2017'
-endDate: 'March 2017'
+date: '2019-01-01'
+startDate: '2019'
+endDate: '2019'
 company: 'Freelance'
 title: 'Game developer'
 tasks:

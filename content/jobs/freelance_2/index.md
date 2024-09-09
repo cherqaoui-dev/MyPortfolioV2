@@ -1,7 +1,7 @@
 ---
-date: '2018-01-01'
-startDate: 'January 2018'
-endDate: 'June 2018'
+date: '2019-01-02'
+startDate: '2019'
+endDate: '2019'
 company: 'Freelance'
 title: 'Software developer'
 tasks:

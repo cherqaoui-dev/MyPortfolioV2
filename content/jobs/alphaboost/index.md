@@ -1,10 +1,10 @@
 ---
-date: '2021-03-01'
-startDate: 'March 2021'
-endDate: 'June 2021'
+date: '2020-03-01'
+startDate: '2020'
+endDate: '2021'
 company: 'Alphaboost'
 title: 'Full Stack Web Developer'
 tasks:
-  - 'Building projects for alphaboost clients.'
-  - 'Working with different frameworks including Laravel, Vue.js, Tailwind css, Alpine js ...'
+  - 'Ecommerce Store to sell Physical & Subscription products.'
+  - 'Application to manage Bookings at various places such as Hotels, Restaurants…'
 ---

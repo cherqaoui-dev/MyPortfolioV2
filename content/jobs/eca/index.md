@@ -1,7 +1,7 @@
 ---
 date: '2021-07-01'
-startDate: 'July 2021'
-endDate: 'Present'
+startDate: '2021'
+endDate: '2022'
 company: 'ECA Assurances'
 title: 'Full Stack Web Developer'
 tasks:

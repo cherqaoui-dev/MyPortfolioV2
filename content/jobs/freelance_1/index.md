@@ -1,6 +1,6 @@
 ---
-date: '2019-01-01'
-startDate: 'January 2019'
+date: '2019-06-01'
+startDate: '2019'
 endDate: 'Present'
 company: 'Freelance'
 title: 'Full Stack Web Developer'

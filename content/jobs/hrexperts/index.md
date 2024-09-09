@@ -1,9 +1,10 @@
 ---
-date: '2015-09-01'
-startDate: 'September 2015'
-endDate: 'February 2016'
+date: '2015-10-01'
+startDate: '2015'
+endDate: '2018'
 company: 'HR Expert'
-title: 'Web Developer'
+title: 'JEE Web Developer'
 tasks:
-  - 'Create a java based platform in order to manage employees salaries.'
+  - 'Maintaining & adding features into existing code bases.'
+  - 'JAVA EE web application to manage salaries, send emails to employee.'
 ---
